@@ -51,7 +51,7 @@
 	  	</div>
 	  	<h3 class="votest">Votes</h3>
 	  	<section class="votessection">
-	  		<article :id="'art'+vote.id" :class="(index%2==0)? 'marginart' : ''" :key="index" v-for="(vote,index) in votes" :style="{ backgroundImage: 'url(' + vote.img + ')' }">
+	  		<article :id="'art'+vote.id" :class="(index%2==0)? 'marginart' : ''" :key="index" v-for="(vote,index) in votesget" :style="{ backgroundImage: 'url(' + vote.img + ')' }">
 	  			<div class="capaart"></div>
 	  			<div class="arttext">
 		  			<h3>{{vote.name}}</h3>
@@ -181,6 +181,8 @@ export default {
   				item.votenow="false"
   			}
   		})
+
+  		this.votesget=[...this.votes]
   	},
   	votebutton(event,id){
   		let el=document.querySelector('#art'+id+' .arttext .updown_buttos .active')
@@ -194,7 +196,8 @@ export default {
 
   		if(votenowbool==="true"){
   			localStorage.setItem('votenow-'+id,"false")
-  			location.reload()
+  			document.querySelector('.arttext .updown_buttos .active').classList.remove('active')
+  			this.rendervotes()
   		}else {
 	  		let el=document.querySelector('#art'+id+' .arttext .updown_buttos .active')
 	  		if(el){
@@ -209,7 +212,7 @@ export default {
 		  		}
 
 		  		localStorage.setItem('votenow-'+id,"true")
-		  		location.reload()
+		  		this.rendervotes()
 		  	}else {
 		  		alert('You should chosee thumb up or thumb down firts')
 		  	}

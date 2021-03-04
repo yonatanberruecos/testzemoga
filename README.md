@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+This project was developed with Vue js, for setup the project you must to install Vue CLI 2.6 and Node js
 npm install
 ```
 
