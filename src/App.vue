@@ -2,14 +2,17 @@
   <main id="app">
     <HeaderPage/>
     <router-view/>
+    <FooterPage/>
   </main>
 </template>
 <script type="text/javascript">
 import HeaderPage from '@/components/HeaderPage.vue'
+import FooterPage from '@/components/FooterPage.vue'
 export default {
   name: 'app',
   components:{
-    HeaderPage
+    HeaderPage,
+    FooterPage
   }
 }
 </script>

@@ -196,7 +196,10 @@ export default {
 
   		if(votenowbool==="true"){
   			localStorage.setItem('votenow-'+id,"false")
-  			document.querySelector('.arttext .updown_buttos .active').classList.remove('active')
+  			let elactive=document.querySelector('.arttext .updown_buttos .active')
+  			if(elactive){
+  				elactive.classList.remove('active')
+  			}
   			this.rendervotes()
   		}else {
 	  		let el=document.querySelector('#art'+id+' .arttext .updown_buttos .active')

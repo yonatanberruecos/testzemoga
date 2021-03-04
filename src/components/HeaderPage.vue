@@ -49,6 +49,9 @@ export default {
 header {
 	color: #ffffff;
 }
+.mobilemenu {
+	display: none;
+}
 .logocolumn, .navcolumn {
 	z-index: 1;
 }
@@ -102,6 +105,10 @@ header {
 	.logostyle {
 		padding: 10px 0px 10px 0px;
 	    font-size: 20px;
+	}
+
+	.mobilemenu {
+		display: block;
 	}
 }
 </style>
