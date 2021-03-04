@@ -91,6 +91,10 @@
 	  </div>
 	</div>
 </template>
+<script>
+import Homejs from '../js/home.js'
+export default Homejs
+</script>
 <style scoped>
 @import '../css/homestyles.css'
 </style>
