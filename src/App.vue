@@ -1,32 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <main id="app">
+    <HeaderPage/>
     <router-view/>
-  </div>
+  </main>
 </template>
-
+<script type="text/javascript">
+import HeaderPage from '@/components/HeaderPage.vue'
+export default {
+  name: 'app',
+  components:{
+    HeaderPage
+  }
+}
+</script>
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+body {
+  font-family: 'Lato', sans-serif !important;
+  background-color: #ffffff !important;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+h1,h2,h3,h4 {
+  font-weight: bold; 
 }
 </style>
